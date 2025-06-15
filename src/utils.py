@@ -12,3 +12,10 @@ def parse_excel_operations() -> list[dict[Any, Any]]:
     file_path = os.getenv("PATH_EXCEL")
     df = pd.read_excel(file_path).fillna("")
     return df.to_dict(orient="records")
+
+
+def load_transactions_from_excel() -> pd.DataFrame:
+    """Функция для считывания финансовых операций из EXCEL"""
+    file_path = os.getenv("PATH_EXCEL")
+    df = pd.read_excel(file_path)
+    return df
