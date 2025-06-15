@@ -86,7 +86,7 @@ def currency_rates(currencies: list) -> list[dict]:
 def stocks(stocks: list) -> list[dict]:
     """Функция для вывода курса акций"""
     api_key = os.getenv("API_KEY_STOCKS")
-    url = f"https://finnhub.io/api/v1/quote"
+    url = "https://finnhub.io/api/v1/quote"
     result = []
     for stock in stocks:
         params = {"symbol": stocks, "token": api_key}
@@ -99,19 +99,19 @@ def stocks(stocks: list) -> list[dict]:
 def home_page(date: str) -> dict:
     logger.info("Функция начала выполнение работы")
     target_date = datetime.strptime(date, "%Y-%m-%d %H:%M:%S")
-    target_mounth = target_date.month
+    target_month = target_date.month
     target_year = target_date.year
     transactions = parse_excel_operations()
-    filtred_transactions = []
+    filtered_transactions = []
     for transaction in transactions:
         transaction_date = datetime.strptime(transaction["Дата операции"], "%d.%m.%Y %H:%M:%S")
-        if transaction_date.year == target_year and transaction_date.month == target_mounth:
-            filtred_transactions.append(transaction)
+        if transaction_date.year == target_year and transaction_date.month == target_month:
+            filtered_transactions.append(transaction)
 
     result = {
         "greeting": greeting(),
-        "cards": cards(filtred_transactions),
-        "top_transactions": top_transactions(filtred_transactions),
+        "cards": cards(filtered_transactions),
+        "top_transactions": top_transactions(filtered_transactions),
         "currency_rates": currency_rates(user_currencies),
         "stock_prices": stocks(user_stocks),
     }
