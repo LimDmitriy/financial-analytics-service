@@ -7,7 +7,6 @@ from typing import Any
 import requests
 from dotenv import load_dotenv
 
-
 from src.utils import parse_excel_operations
 
 load_dotenv()
