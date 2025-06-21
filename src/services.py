@@ -3,7 +3,7 @@ import logging
 from src.utils import parse_excel_operations
 
 logger = logging.getLogger(__name__)
-file_handler = logging.FileHandler("../logs/services.logs", mode="w")
+file_handler = logging.FileHandler("/Users/dimalim/PycharmProjects/course_project/logs/reports.logs", mode="w")
 file_formatter = logging.Formatter("%(asctime)s %(levelname)s: %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
