@@ -29,7 +29,7 @@
 ## 🚀 Установка и запуск
 1. Клонируйте репозиторий:
 ```
-git clone https://github.com/LimDmitriy/bank_service
+git clone https://github.com/LimDmitriy/financial-analytics-service
 ```
 2. Установите зависимости:
 ```
