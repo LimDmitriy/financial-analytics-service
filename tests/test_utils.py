@@ -4,7 +4,7 @@ from unittest.mock import patch
 import pandas as pd
 import pytest
 
-from src.utils import parse_excel_operations, load_transactions_from_excel, cards, top_transactions, greeting
+from src.utils import cards, greeting, load_transactions_from_excel, parse_excel_operations, top_transactions
 
 
 @patch("src.utils.pd.read_excel")

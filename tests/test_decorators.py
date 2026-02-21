@@ -1,8 +1,5 @@
 from datetime import date
-from unittest import mock
 from unittest.mock import mock_open, patch
-
-import pytest
 
 from src.decorators import file_log, log
 
