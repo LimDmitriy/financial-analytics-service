@@ -1,6 +1,6 @@
 import logging
 from datetime import datetime, timedelta
-from typing import Any, Optional, Hashable
+from typing import Any, Hashable, Optional
 
 import pandas as pd
 
@@ -10,7 +10,7 @@ from src.utils import load_transactions_from_excel
 data = load_transactions_from_excel()
 
 logger = logging.getLogger(__name__)
-file_handler = logging.FileHandler("../logs/reports.logs", mode="w")
+file_handler = logging.FileHandler("/Users/dimalim/PycharmProjects/course_project/logs/reports.logs", mode="w")
 file_formatter = logging.Formatter("%(asctime)s %(levelname)s: %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)

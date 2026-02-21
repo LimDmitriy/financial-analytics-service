@@ -21,6 +21,7 @@ def file_log(func):
             message = f"{func.__name__} error: {error_type}."
             with open("/Users/dimalim/PycharmProjects/course_project/file_log.txt", "w") as file:
                 file.write(message)
+            raise
 
         return result
 

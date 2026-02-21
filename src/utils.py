@@ -49,8 +49,8 @@ def cards(transactions: list[dict]) -> list[dict[str, Any]]:
 
 def top_transactions(transactions: list[dict]) -> list[dict]:
     """Функция возвращает топ 5 операций"""
-    sorted_transactions = sorted(transactions, key=lambda t: t.get("Сумма операции с округлением", ""))
-    top_5 = sorted_transactions[-5:]
+    sorted_transactions = sorted(transactions, key=lambda t: t.get("Сумма операции с округлением", ""), reverse=True)
+    top_5 = sorted_transactions[:5]
     result = []
     for t in top_5:
         result.append(

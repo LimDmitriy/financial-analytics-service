@@ -13,14 +13,14 @@ load_dotenv()
 
 
 logger = logging.getLogger(__name__)
-file_handler = logging.FileHandler("../logs/views.logs", mode="w")
+file_handler = logging.FileHandler("/Users/dimalim/PycharmProjects/course_project/logs/reports.logs", mode="w")
 file_formatter = logging.Formatter("%(asctime)s %(levelname)s: %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 logger.setLevel(logging.DEBUG)
 
 
-with open("../user_settings.json", "r", encoding="utf-8") as f:
+with open("/Users/dimalim/PycharmProjects/course_project/user_settings.json", "r", encoding="utf-8") as f:
     config_data = json.load(f)
 
 user_currencies = config_data.get("user_currencies", "")  # Курсы валют
